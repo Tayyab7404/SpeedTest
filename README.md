@@ -62,8 +62,8 @@ This project is compatible with most modern browsers, including:
 ## Screenshots
 
 ### Speed Test UI
-![Speed Test 1](SpeedTest 1.png)
-![Speed Test 2](SpeedTest 2.png)
+![Speed Test 1]("SpeedTest 1.png")
+![Speed Test 2]("SpeedTest 2.png")
 
 ## License
 
