@@ -1,0 +1,180 @@
+:root
+{
+    --primary-color: #6366f1;
+    --secondary-color: #4f46e5;
+    --background-color: #f3f4f6;
+    --text-color: #1f2937;
+    --gauge-color: #d1d5db;
+}
+
+body
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container
+{
+    text-align: center;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+h1
+{
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+#speedGauge
+{
+    width: 300px;
+    height: 160px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+}
+
+#speedGauge svg
+{
+    width: 100%;
+    height: 100%;
+}
+
+.gauge-bg
+{
+    fill: none;
+    stroke: var(--gauge-color);
+    stroke-width: 20;
+}
+
+.gauge-fill
+{
+    fill: none;
+    stroke: var(--secondary-color);
+    stroke-width: 20;
+    stroke-dasharray: 0 251.2;
+    transition: stroke-dasharray 1s ease-in-out;
+}
+
+.gauge-text
+{
+    font-size: 24px;
+    font-weight: bold;
+    fill: var(--text-color);
+    z-index: 0;
+}
+
+.gauge-label
+{
+    font-size: 14px;
+    fill: #666;
+    z-index: 0;
+}
+
+.gauge-value
+{
+    font-size: 12px;
+    fill: #666;
+}
+
+#needle
+{
+    position: absolute;
+    width: 100px;
+    height: 8px;
+    background-color: #ef4444;
+    bottom: 20px;
+    left: 50%;
+    transform-origin: left center;
+    transform: rotate(-180deg);
+    transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    z-index: 1;
+}
+
+#needle::after
+{
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #ef4444;
+    border-radius: 50%;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#speed
+{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 1rem 0;
+    transition: color 0.3s;
+    position: relative;
+    z-index: 2;
+}
+
+#status
+{
+    margin-bottom: 1.5rem;
+    color: #666;
+    font-style: italic;
+}
+
+button
+{
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s;
+    outline: none;
+}
+
+button:hover
+{
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:active
+{
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+button:disabled
+{
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+@keyframes pulse
+{
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse
+{
+    animation: pulse 1s infinite;
+}
