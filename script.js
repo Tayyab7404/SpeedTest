@@ -15,7 +15,7 @@ function startSpeedTest()
     speedDisplay.classList.add('pulse');
     
     const startTime = new Date().getTime();
-    const fileSize = 5 * 1024 * 1024; // 5MB file size
+    const fileSize = 10 * 1024 * 1024; // 10 MB file size
     const downloadUrl = `https://speed.cloudflare.com/__down?bytes=${fileSize}`;
 
     fetch(downloadUrl)
@@ -43,9 +43,9 @@ function updateSpeedDisplay(speed)
     speedDisplay.classList.remove('pulse');
 
     // Update color based on speed
-    if (speed < 5)
+    if (speed < 10)
         speedDisplay.style.color = '#ef4444'; // Red for slow
-    else if (speed < 20)
+    else if (speed < 25)
         speedDisplay.style.color = '#f59e0b'; // Orange for medium
     else if (speed < 75)
         speedDisplay.style.color = '#10b981'; // Green for fast
