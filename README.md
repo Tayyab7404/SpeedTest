@@ -59,7 +59,11 @@ This project is compatible with most modern browsers, including:
 - Include more detailed statistics like latency (ping) and jitter.
 - Display a history of past speed test results.
 
+## Screenshots
 
+### Speed Test UI
+![Speed Test 1](SpeedTest1.png)
+![Speed Test 2](SpeedTest2.png)
 
 ## License
 
